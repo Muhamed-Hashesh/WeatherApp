@@ -30,7 +30,7 @@ class WeatherAddedScreen extends StatelessWidget {
               child: WeatherAddedContent(),
             ),
             //!----------------------------------------------------------------
-            // const WeatherCardSliverGridBuilder(),
+            const SliverToBoxAdapter(child: WeatherCardSliverGridBuilder()),
             //!----------------------------------------------------------------
             const SliverToBoxAdapter(
               child: SizedBox(

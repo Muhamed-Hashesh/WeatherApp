@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:my_weather_app/models/weather_card_model.dart';
 
 class WeatherDaysCard extends StatelessWidget {
@@ -28,7 +29,7 @@ class WeatherDaysCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '${weatherCardModel.hours} PM',
+              DateFormat('h a').format(weatherCardModel.hours),
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,

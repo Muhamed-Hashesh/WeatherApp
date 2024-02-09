@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_weather_app/cubits/weather_cubit/weather_states.dart';
-import 'package:my_weather_app/models/weather_card_model.dart';
 import 'package:my_weather_app/models/weather_model.dart';
 import 'package:my_weather_app/services/weather_services.dart';
 

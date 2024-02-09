@@ -4,12 +4,10 @@ import 'package:my_weather_app/cubits/weather_cubit/weather_cubit.dart';
 import 'package:my_weather_app/cubits/weather_cubit/weather_states.dart';
 import 'package:my_weather_app/views/no_weather_view.dart';
 import 'package:my_weather_app/views/weather_added_view.dart';
+import 'package:my_weather_app/views/weather_call_error.dart';
 
 class HomeScreenPage extends StatelessWidget {
-  const HomeScreenPage({
-    super.key
-  });
-
+  const HomeScreenPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +26,12 @@ class HomeScreenPage extends StatelessWidget {
               if (state is NoWeatherState) {
                 return const NoWeatherScreen();
               } else if (state is WeatherAddedState) {
-                return WeatherAddedScreen(
-                  
-                );
+                return const WeatherAddedScreen();
+              } else if (state is FailureScreenState) {
+                return const WeatherCallError();
               } else {
                 return const Center(
-                  child: Text('data not found'),
+                  child: CircularProgressIndicator(),
                 );
               }
             }),

@@ -4,7 +4,8 @@ import 'package:my_weather_app/widgets/weather_day_card.dart';
 
 class WeatherCardSliverGrid extends StatelessWidget {
   const WeatherCardSliverGrid({
-    super.key, required this.weatherList,
+    super.key,
+    required this.weatherList,
   });
   final List<WeatherCardModel> weatherList;
 
@@ -13,7 +14,7 @@ class WeatherCardSliverGrid extends StatelessWidget {
     return SliverGrid(
       delegate: SliverChildBuilderDelegate(childCount: weatherList.length,
           (context, index) {
-        Center(
+        return Center(
           child: WeatherDaysCard(
             weatherCardModel: weatherList[index],
           ),

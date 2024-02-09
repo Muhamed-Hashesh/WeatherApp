@@ -11,7 +11,7 @@ class SearchScreenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         slivers: [
           const CustomSliverAppBar(
             title: 'Search City',
@@ -23,6 +23,7 @@ class SearchScreenPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: TextField(
                 onSubmitted: (value) {
+                  // ignore: unused_local_variable
                   var getWeatherCubit =
                       BlocProvider.of<GetWeatherCubit>(context)
                           .getWeather(cityName: value);

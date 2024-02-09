@@ -30,7 +30,7 @@ class WeatherAddedScreen extends StatelessWidget {
               child: WeatherAddedContent(),
             ),
             //!----------------------------------------------------------------
-            const SliverToBoxAdapter(child: WeatherCardSliverGridBuilder()),
+            const WeatherCardSliverGridBuilder(),
             //!----------------------------------------------------------------
             const SliverToBoxAdapter(
               child: SizedBox(
@@ -81,12 +81,16 @@ class _WeatherCardSliverGridBuilderState
               weatherList: snapshot.data!,
             );
           } else if (snapshot.hasError) {
-            return const Center(
-              child: Text('data'),
+            return const SliverToBoxAdapter(
+              child: Center(
+                child: Text('data not found'),
+              ),
             );
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
+            return const SliverToBoxAdapter(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
             );
           }
         });

@@ -27,12 +27,8 @@ class HomeScreenPage extends StatelessWidget {
                 return const NoWeatherScreen();
               } else if (state is WeatherAddedState) {
                 return const WeatherAddedScreen();
-              } else if (state is FailureScreenState) {
-                return const WeatherCallError();
               } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const WeatherCallError();
               }
             }),
           ),

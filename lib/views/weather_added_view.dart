@@ -19,7 +19,7 @@ class WeatherAddedScreen extends StatelessWidget {
     return Stack(
       children: [
         CustomScrollView(
-          physics: const ClampingScrollPhysics(),
+          // physics: const ClampingScrollPhysics(),
           slivers: [
             CustomSliverAppBar(
               title: weatherModel.city,

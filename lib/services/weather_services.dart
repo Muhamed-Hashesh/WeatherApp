@@ -30,6 +30,8 @@ class WeatherServices {
     }
   }
 
+  
+
   Future<List<WeatherCardModel>> getCardWeather(String cityName) async {
     try {
       Response response = await dio

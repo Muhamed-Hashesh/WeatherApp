@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:my_weather_app/models/weather_card_model.dart';
 import 'package:my_weather_app/models/weather_model.dart';
@@ -12,7 +10,7 @@ class WeatherServices {
 
   const WeatherServices(this.dio);
 
-  Future<WeatherModel> getWeather(String cityName) async {
+  Future<WeatherModel> getCurrentWeather({required String cityName}) async {
     try {
       Response response = await dio
           .get('$baseURL/forecast.json?key=$apiKey&q=$cityName&days=1');
@@ -25,12 +23,10 @@ class WeatherServices {
           'Oops! There was an error, Try later';
       throw Exception(errorMessage);
     } catch (e) {
-      log(e.toString());
-      throw 'Oops! There was an error, Try later';
+      print(e);
+      throw Exception('Oops! There was an error, Try later');
     }
   }
-
-  
 
   Future<List<WeatherCardModel>> getCardWeather(String cityName) async {
     try {
@@ -50,8 +46,8 @@ class WeatherServices {
           'Oops! There was an error, Try later';
       throw Exception(errorMessage);
     } catch (e) {
-      log(e.toString());
-      throw 'Oops! There was an error, Try later';
+      print(e);
+      throw Exception('Oops! There was an error, Try later');
     }
   }
 }

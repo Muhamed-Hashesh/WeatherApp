@@ -4,7 +4,6 @@ import 'package:my_weather_app/cubits/weather_cubit/weather_cubit.dart';
 import 'package:my_weather_app/cubits/weather_cubit/weather_states.dart';
 import 'package:my_weather_app/views/no_weather_view.dart';
 import 'package:my_weather_app/views/weather_added_view.dart';
-import 'package:my_weather_app/views/weather_call_error.dart';
 
 class HomeScreenPage extends StatelessWidget {
   const HomeScreenPage({super.key});
@@ -28,7 +27,9 @@ class HomeScreenPage extends StatelessWidget {
               } else if (state is WeatherAddedState) {
                 return const WeatherAddedScreen();
               } else {
-                return const WeatherCallError();
+                return const Center(
+                  child: Text('data'),
+                );
               }
             }),
           ),

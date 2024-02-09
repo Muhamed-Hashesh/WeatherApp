@@ -22,11 +22,10 @@ class SearchScreenPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
-                onSubmitted: (value) {
-                  // ignore: unused_local_variable
+                onSubmitted: (value) async{
                   var getWeatherCubit =
-                      BlocProvider.of<GetWeatherCubit>(context)
-                          .getWeather(cityName: value);
+                      BlocProvider.of<GetWeatherCubit>(context);
+                  getWeatherCubit.getWeather(cityName: value);
 
                   Navigator.pop(context);
                 },

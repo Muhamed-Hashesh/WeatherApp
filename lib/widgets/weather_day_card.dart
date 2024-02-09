@@ -29,9 +29,7 @@ class WeatherDaysCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              weatherCardModel.hours != null
-                  ? DateFormat('h a').format(weatherCardModel.hours)
-                  : 'N/A',
+              DateFormat('h a').format(weatherCardModel.hours),
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   color: Colors.white,
@@ -64,7 +62,6 @@ class WeatherDaysCard extends StatelessWidget {
     final condition = weatherCardModel.condition;
 
     switch (condition) {
-      // ... Your existing switch cases
       case "Sunny":
         return 'assets/clouds/Sunny.png';
       case "Partly cloudy":
@@ -81,16 +78,16 @@ class WeatherDaysCard extends StatelessWidget {
         return 'assets/clouds/MoonSnow.png';
       case "Patchy sleet possible":
         return 'assets/clouds/Rain.png';
-      case 'assets/clouds/MoonSnow0.png':
-        return "Possibility of scattered freezing drizzle.";
-      case 'assets/clouds/MoonRain.png':
+      case "Patchy freezing drizzle possible":
+        return 'assets/clouds/MoonSnow0.png';
+      case "Thundery outbreaks possible":
         return 'assets/clouds/Snow0.png';
       case "Blowing snow":
         return 'assets/clouds/MoonSnow.png';
       case "Blizzard":
         return 'assets/clouds/MoonRain.png';
       default:
-        return 'assets/clouds/Snow0.png'; // Add a default image if the condition doesn't match any case
+        return 'assets/clouds/Snow0.png';
     }
   }
 }
